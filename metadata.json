@@ -1,0 +1,6 @@
+{
+  "name": "Veltrix Motors",
+  "description": "An ultra-premium, cinematic modern luxury automotive experience and interactive showroom.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

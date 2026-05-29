@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Bebas Neue", sans-serif;
+  --font-body: "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --color-gold: #dfb46c;
+  --color-vel-blue: #1E3A8A;
+  --color-vel-crimson: #B11226;
+  --color-vel-dark: #0B0F14;
+  --color-vel-neon: #C2410C;
+
+  /* Car Haven Luxury Color System */
+  --color-midnight-asphalt: #0B0F14;
+  --color-showroom-black: #111820;
+  --color-carbon-shadow: #161C24;
+  --color-soft-steel: #1F2A37;
+
+  --color-racing-blue: #1E3A8A;
+  --color-metallic-navy: #0F2A4A;
+  --color-luxury-red: #B11226;
+  --color-performance-orange: #C2410C;
+
+  --color-brushed-chrome: #BFC7D5;
+  --color-soft-platinum: #E5E7EB;
+  --color-ice-white: #F8FAFC;
+  --color-gunmetal-shine: #6B7280;
+}
+
+@layer utilities {
+  .glow-blue {
+    text-shadow: 0 0 10px rgba(30, 58, 138, 0.5), 0 0 20px rgba(30, 58, 138, 0.3);
+  }
+  .glow-crimson {
+    text-shadow: 0 0 10px rgba(177, 18, 38, 0.5), 0 0 20px rgba(177, 18, 38, 0.3);
+  }
+  .glow-border-blue {
+    box-shadow: 0 0 15px rgba(30, 58, 138, 0.15);
+  }
+  .glow-border-crimson {
+    box-shadow: 0 0 15px rgba(177, 18, 38, 0.15);
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Custom Styles */
+html {
+  scroll-behavior: smooth;
+  background-color: #0B0F14;
+  color: #F8FAFC;
+  font-family: var(--font-body);
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #0B0F14;
+}
+
+::selection {
+  background-color: rgba(30, 58, 138, 0.25);
+  color: #E5E7EB;
+}
+
+/* Premium Glassmorphism */
+.glass-panel {
+  background: rgba(17, 24, 32, 0.8);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-panel-neon {
+  background: rgba(17, 24, 32, 0.9);
+  backdrop-filter: blur(32px);
+  -webkit-backdrop-filter: blur(32px);
+  border: 1px solid rgba(30, 58, 138, 0.25);
+}
+
+/* Custom Speedometer Arc */
+.speedometer-bg {
+  stroke-dasharray: 251.2;
+  stroke-dashoffset: 62.8;
+}
+
+/* Luxury Card reflection */
+.reflect-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.reflect-hover::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 45%,
+    rgba(255, 255, 255, 0.1) 48%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.1) 52%,
+    transparent 55%
+  );
+  transform: rotate(-45deg);
+  transition: transform 0.6s ease;
+  pointer-events: none;
+}
+
+.reflect-hover:hover::after {
+  transform: translate(50%, 50%) rotate(-45deg);
+}
